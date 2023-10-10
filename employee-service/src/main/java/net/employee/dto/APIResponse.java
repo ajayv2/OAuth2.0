@@ -3,10 +3,12 @@ package net.employee.dto;
 public class APIResponse {
     private EmployeeDTO employee;
     private DepartmentDTO department;
+    private OrganizationDto organizationDto;
 
-    public APIResponse(EmployeeDTO employee, DepartmentDTO department) {
+    public APIResponse(EmployeeDTO employee, DepartmentDTO department, OrganizationDto organizationDto) {
         this.employee = employee;
         this.department = department;
+        this.organizationDto = organizationDto;
     }
 
     public APIResponse() {
@@ -28,11 +30,20 @@ public class APIResponse {
         this.department = department;
     }
 
+    public OrganizationDto getOrganizationDto() {
+        return organizationDto;
+    }
+
+    public void setOrganizationDto(OrganizationDto organizationDto) {
+        this.organizationDto = organizationDto;
+    }
+
     @Override
     public String toString() {
         return "APIResponse{" +
                 "employee=" + employee +
                 ", department=" + department +
+                ", organizationDto=" + organizationDto +
                 '}';
     }
 }

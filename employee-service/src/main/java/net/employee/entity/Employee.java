@@ -17,12 +17,16 @@ public class Employee {
     @Column(nullable = false)
     private String departmentCode;
 
-    public Employee(Long id, String firstName, String lastName, String email, String departmentCode) {
+    @Column(nullable = false)
+    private String organizationCode;
+
+    public Employee(Long id, String firstName, String lastName, String email, String departmentCode, String organizationCode) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.departmentCode = departmentCode;
+        this.organizationCode = organizationCode;
     }
 
     public Employee() {
@@ -68,6 +72,14 @@ public class Employee {
         this.departmentCode = departmentCode;
     }
 
+    public String getOrganizationCode() {
+        return organizationCode;
+    }
+
+    public void setOrganizationCode(String organizationCode) {
+        this.organizationCode = organizationCode;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
@@ -76,6 +88,7 @@ public class Employee {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", departmentCode='" + departmentCode + '\'' +
+                ", organizationCode='" + organizationCode + '\'' +
                 '}';
     }
 }

@@ -6,13 +6,15 @@ public class EmployeeDTO {
     private String lastName;
     private String email;
     private String departmentCode;
+    private String organizationCode;
 
-    public EmployeeDTO(Long id, String firstName, String lastName, String email, String departmentCode) {
+    public EmployeeDTO(Long id, String firstName, String lastName, String email, String departmentCode, String organizationCode) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.departmentCode = departmentCode;
+        this.organizationCode = organizationCode;
     }
 
     public EmployeeDTO() {
@@ -58,6 +60,14 @@ public class EmployeeDTO {
         this.departmentCode = departmentCode;
     }
 
+    public String getOrganizationCode() {
+        return organizationCode;
+    }
+
+    public void setOrganizationCode(String organizationCode) {
+        this.organizationCode = organizationCode;
+    }
+
     @Override
     public String toString() {
         return "EmployeeDTO{" +
@@ -66,6 +76,7 @@ public class EmployeeDTO {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", departmentCode='" + departmentCode + '\'' +
+                ", organizationCode='" + organizationCode + '\'' +
                 '}';
     }
 }
