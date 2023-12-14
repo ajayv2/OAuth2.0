@@ -2,15 +2,15 @@ package net.employee.dto;
 
 public class DepartmentDTO {
     private Long id;
-    private String departmentName;
-    private String departmentDescription;
-    private String departmentCode;
+    private String name;
+    private String description;
+    private String code;
 
-    public DepartmentDTO(Long id, String departmentName, String departmentDescription, String departmentCode) {
+    public DepartmentDTO(Long id, String name, String description, String code) {
         this.id = id;
-        this.departmentName = departmentName;
-        this.departmentDescription = departmentDescription;
-        this.departmentCode = departmentCode;
+        this.name = name;
+        this.description = description;
+        this.code = code;
     }
 
     public DepartmentDTO() {
@@ -24,37 +24,37 @@ public class DepartmentDTO {
         this.id = id;
     }
 
-    public String getDepartmentName() {
-        return departmentName;
+    public String getName() {
+        return name;
     }
 
-    public void setDepartmentName(String departmentName) {
-        this.departmentName = departmentName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getDepartmentDescription() {
-        return departmentDescription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDepartmentDescription(String departmentDescription) {
-        this.departmentDescription = departmentDescription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getDepartmentCode() {
-        return departmentCode;
+    public String getCode() {
+        return code;
     }
 
-    public void setDepartmentCode(String departmentCode) {
-        this.departmentCode = departmentCode;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     @Override
     public String toString() {
-        return "DepartmentCode{" +
+        return "DepartmentDTO{" +
                 "id=" + id +
-                ", departmentName='" + departmentName + '\'' +
-                ", departmentDescription='" + departmentDescription + '\'' +
-                ", departmentCode='" + departmentCode + '\'' +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", code='" + code + '\'' +
                 '}';
     }
 }

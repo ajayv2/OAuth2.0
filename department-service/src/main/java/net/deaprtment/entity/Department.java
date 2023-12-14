@@ -9,21 +9,16 @@ public class Department {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = false)
-    private String departmentName;
+    private String name;
     @Column(nullable = false)
-    private String departmentDescription;
+    private String description;
     @Column(nullable = false,unique = true)
-    private String departmentCode;
+    private String code;
 
     public Department() {
     }
 
-    public Department(Long id, String departmentName, String departmentDescription, String departmentCode) {
-        this.id = id;
-        this.departmentName = departmentName;
-        this.departmentDescription = departmentDescription;
-        this.departmentCode = departmentCode;
-    }
+
 
     public Long getId() {
         return id;
@@ -33,37 +28,44 @@ public class Department {
         this.id = id;
     }
 
-    public String getDepartmentName() {
-        return departmentName;
+    public Department(Long id, String name, String description, String code) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.code = code;
     }
 
-    public void setDepartmentName(String departmentName) {
-        this.departmentName = departmentName;
+    public String getName() {
+        return name;
     }
 
-    public String getDepartmentDescription() {
-        return departmentDescription;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setDepartmentDescription(String departmentDescription) {
-        this.departmentDescription = departmentDescription;
+    public String getDescription() {
+        return description;
     }
 
-    public String getDepartmentCode() {
-        return departmentCode;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public void setDepartmentCode(String departmentCode) {
-        this.departmentCode = departmentCode;
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     @Override
     public String toString() {
         return "Department{" +
                 "id=" + id +
-                ", departmentName='" + departmentName + '\'' +
-                ", departmentDescription='" + departmentDescription + '\'' +
-                ", departmentCode='" + departmentCode + '\'' +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", code='" + code + '\'' +
                 '}';
     }
 }

@@ -6,19 +6,19 @@ public class OrganizationDto {
 
     private Long id;
 
-    private String organizationName;
+    private String name;
 
-    private String organizationDescription;
+    private String description;
 
-    private String organizationCode;
+    private String code;
 
     private LocalDateTime createdDate;
 
-    public OrganizationDto(Long id, String organizationName, String organizationDescription, String organizationCode, LocalDateTime createdDate) {
+    public OrganizationDto(Long id, String name, String description, String code, LocalDateTime createdDate) {
         this.id = id;
-        this.organizationName = organizationName;
-        this.organizationDescription = organizationDescription;
-        this.organizationCode = organizationCode;
+        this.name = name;
+        this.description = description;
+        this.code = code;
         this.createdDate = createdDate;
     }
 
@@ -33,28 +33,28 @@ public class OrganizationDto {
         this.id = id;
     }
 
-    public String getOrganizationName() {
-        return organizationName;
+    public String getName() {
+        return name;
     }
 
-    public void setOrganizationName(String organizationName) {
-        this.organizationName = organizationName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getOrganizationDescription() {
-        return organizationDescription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setOrganizationDescription(String organizationDescription) {
-        this.organizationDescription = organizationDescription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getOrganizationCode() {
-        return organizationCode;
+    public String getCode() {
+        return code;
     }
 
-    public void setOrganizationCode(String organizationCode) {
-        this.organizationCode = organizationCode;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public LocalDateTime getCreatedDate() {
@@ -69,9 +69,9 @@ public class OrganizationDto {
     public String toString() {
         return "OrganizationDto{" +
                 "id=" + id +
-                ", organizationName='" + organizationName + '\'' +
-                ", organizationDescription='" + organizationDescription + '\'' +
-                ", organizationCode='" + organizationCode + '\'' +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", code='" + code + '\'' +
                 ", createdDate=" + createdDate +
                 '}';
     }

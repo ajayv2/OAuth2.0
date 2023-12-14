@@ -12,19 +12,19 @@ public class Organization {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = false)
-    private String organizationName;
+    private String name;
     @Column(nullable = false)
-    private String organizationDescription;
+    private String description;
     @Column(nullable = false,unique = true)
-    private String organizationCode;
+    private String code;
     @CreationTimestamp
     private LocalDateTime createdDate;
 
-    public Organization(Long id, String organizationName, String organizationDescription, String organizationCode, LocalDateTime createdDate) {
+    public Organization(Long id, String name, String description, String code, LocalDateTime createdDate) {
         this.id = id;
-        this.organizationName = organizationName;
-        this.organizationDescription = organizationDescription;
-        this.organizationCode = organizationCode;
+        this.name = name;
+        this.description = description;
+        this.code = code;
         this.createdDate = createdDate;
     }
 
@@ -39,28 +39,28 @@ public class Organization {
         this.id = id;
     }
 
-    public String getOrganizationName() {
-        return organizationName;
+    public String getName() {
+        return name;
     }
 
-    public void setOrganizationName(String organizationName) {
-        this.organizationName = organizationName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getOrganizationDescription() {
-        return organizationDescription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setOrganizationDescription(String organizationDescription) {
-        this.organizationDescription = organizationDescription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getOrganizationCode() {
-        return organizationCode;
+    public String getCode() {
+        return code;
     }
 
-    public void setOrganizationCode(String organizationCode) {
-        this.organizationCode = organizationCode;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public LocalDateTime getCreatedDate() {
@@ -75,9 +75,9 @@ public class Organization {
     public String toString() {
         return "Organization{" +
                 "id=" + id +
-                ", organizationName='" + organizationName + '\'' +
-                ", organizationDescription='" + organizationDescription + '\'' +
-                ", organizationCode='" + organizationCode + '\'' +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", code='" + code + '\'' +
                 ", createdDate=" + createdDate +
                 '}';
     }

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Employee Page</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Employee Management System</a>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active text-center">
+                <a class="nav-link" th:href="@{/home}">Home <span class="sr-only">(current)</span></a>
+            </li>
+
+
+        </ul>
+
+    </div>
+</nav>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-6 offset-sm-3">
+            <div class="card">
+                <div class="card-body">
+    <h2>Organization Addition Form</h2>
+    <form method="post">
+        <div class="form-group">
+            <label for="organizationCode">OrganizationCode:</label>
+            <input type="text" class="form-control" id="organizationCode" placeholder="Enter organizationCode" name="organizationCode">
+        </div>
+        <div class="form-group">
+            <label for="organizationName">OrganizationName:</label>
+            <input type="text" class="form-control" id="organizationName" placeholder="Enter organizationName" name="organizationName">
+        </div>
+        <div class="form-group">
+            <label for="organizationDescription">OrganizationDescription:</label>
+            <input type="text" class="form-control" id="organizationDescription" placeholder="Enter organizationDescription" name="organizationDescription">
+        </div>
+
+
+        <button type="button" id="addOrganization" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+    </div>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script th:src="@{js/organization.js}"></script>
+</body>
+</html>

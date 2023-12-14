@@ -1,11 +1,40 @@
 package net.employee.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+
+@Schema(
+        description = "EmployeeDTO model information"
+)
 public class EmployeeDTO {
     private Long id;
+    @Schema(
+            description = "Employee First Name"
+    )
+    @NotEmpty(message = "First name should not be blank")
     private String firstName;
+    @Schema(
+            description = "Employee Last Name"
+    )
+    @NotEmpty(message = "Last name should not be blank")
     private String lastName;
+    @Schema(
+            description = "Employee Email"
+    )
+    @NotEmpty(message = "email should not be blank")
+    @Email(message = "Email should be in valid format")
     private String email;
+    @Schema(
+            description = "Employee Department Code"
+    )
+    @NotEmpty(message = "department code should not be blank")
     private String departmentCode;
+    @Schema(
+            description = "Employee Organization Code"
+    )
+    @NotEmpty(message = "organization code should not be blank")
     private String organizationCode;
 
     public EmployeeDTO(Long id, String firstName, String lastName, String email, String departmentCode, String organizationCode) {

@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: ORGANIZATION-SERVICE
+  config:
+    import: optional:configserver:http://localhost:8787
+
+
+okta:
+  oauth2:
+    issuer: https://dev-08372852.okta.com/oauth2/default
+    audience: api://default

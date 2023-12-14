@@ -1,0 +1,61 @@
+spring:
+  application:
+    name: EMPLOYEE-SERVICE
+  config:
+    import: optional:configserver:http://localhost:8787
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://dev-08372852.okta.com/oauth2/default
+      client:
+        registration:
+          my-internal-client:
+            provider: okta
+            authorization-grant-type: client_credentials
+            scope: internal
+            client-id: 0oads5vksmpdjxue45d7
+            client-secret: oPmuJP323ODkLffR8A962zMacehUuMLJ0sEbnfNn_9bLugxt32aRP0HoWxWqK-AR
+        provider:
+          okta:
+            issuer-uri: https://dev-08372852.okta.com/oauth2/default
+
+management:
+  health:
+    circuitbreakers:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: always
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      EMPLOYEE-SERVICE:
+        registerHealthIndicator: true
+        failureRateThreshold: 50
+        minimumNumberOfCalls: 5
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        waitDurationInOpenState: 5s
+        permittedNumberOfCallsInHalfOpenState: 3
+        slidingWindowSize: 10
+        slidingWindowType: COUNT_BASED
+  retry:
+    instances:
+      EMPLOYEE-SERVICE:
+        registerHealthIndicator: true
+        maxRetryAttempts: 10
+        waitDuration: 2s
+
+
+
+
+okta:
+  oauth2:
+    issuer: https://dev-08372852.okta.com/oauth2/default
+    audience: api://default

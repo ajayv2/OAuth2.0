@@ -1,0 +1,42 @@
+server:
+  port: 9191
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes[0]:
+        id: EMPLOYEE-SERVICE
+        uri: lb://EMPLOYEE-SERVICE
+        predicates[0]: Path=/api/employees/**
+      routes[1]:
+        id: DEPARTMENT-SERVICE
+        uri: lb://DEPARTMENT-SERVICE
+        predicates[0] : Path=/api/departments/**
+      routes[2]:
+        id: ORGANIZATION-SERVICE
+        uri: lb://ORGANIZATION-SERVICE
+        predicates[0] : Path=/api/organizations/**
+eureka:
+  instance:
+    client:
+      serverUrl:
+        defaultZone: http://localhost:8761/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
+
+okta:
+  oauth2:
+    issuer: https://dev-08372852.okta.com/oauth2/default
+    audience: api://default
+    client-id: 0oads5vksmpdjxue45d7
+    client-secret: oPmuJP323ODkLffR8A962zMacehUuMLJ0sEbnfNn_9bLugxt32aRP0HoWxWqK-AR
+    scopes: openid,profile,email,offline_access
+
+
+

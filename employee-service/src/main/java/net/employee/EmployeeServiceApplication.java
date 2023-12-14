@@ -1,5 +1,10 @@
 package net.employee;
 
+import io.swagger.v3.oas.annotations.ExternalDocumentation;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Contact;
+import io.swagger.v3.oas.annotations.info.Info;
+import io.swagger.v3.oas.annotations.info.License;
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,6 +17,26 @@ import org.springframework.web.reactive.function.client.WebClient;
 @SpringBootApplication
 @EnableFeignClients
 @EnableEurekaClient
+@OpenAPIDefinition(
+		info = @Info(
+				title = "Spring Boot Employee Service API Documentation",
+				description = "Spring BOOT Employee Service API Documentation",
+				version = "v1.0",
+				contact = @Contact(
+						name = "Vivek",
+						email = "vivek.chaurasia@v2solutions.com",
+						url = "https://abc.com"
+				),
+				license = @License(
+						name = "Apache 2.0",
+						url = "https://www.abc.com"
+				)
+		),
+		externalDocs = @ExternalDocumentation(
+				description = "Spring boot Employee Service API documentation",
+				url = "https://abc.com"
+		)
+)
 public class EmployeeServiceApplication {
 
 	@Bean
@@ -24,10 +49,7 @@ public class EmployeeServiceApplication {
 //		return new RestTemplate();
 //	}
 
-	@Bean
-	public WebClient webClient(){
-		return WebClient.builder().build();
-	}
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(EmployeeServiceApplication.class, args);

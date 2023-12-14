@@ -3,12 +3,12 @@ package net.employee.dto;
 public class APIResponse {
     private EmployeeDTO employee;
     private DepartmentDTO department;
-    private OrganizationDto organizationDto;
+    private OrganizationDto organization;
 
-    public APIResponse(EmployeeDTO employee, DepartmentDTO department, OrganizationDto organizationDto) {
+    public APIResponse(EmployeeDTO employee, DepartmentDTO department, OrganizationDto organization) {
         this.employee = employee;
         this.department = department;
-        this.organizationDto = organizationDto;
+        this.organization = organization;
     }
 
     public APIResponse() {
@@ -30,12 +30,12 @@ public class APIResponse {
         this.department = department;
     }
 
-    public OrganizationDto getOrganizationDto() {
-        return organizationDto;
+    public OrganizationDto getOrganization() {
+        return organization;
     }
 
-    public void setOrganizationDto(OrganizationDto organizationDto) {
-        this.organizationDto = organizationDto;
+    public void setOrganization(OrganizationDto organization) {
+        this.organization = organization;
     }
 
     @Override
@@ -43,7 +43,7 @@ public class APIResponse {
         return "APIResponse{" +
                 "employee=" + employee +
                 ", department=" + department +
-                ", organizationDto=" + organizationDto +
+                ", organization=" + organization +
                 '}';
     }
 }
