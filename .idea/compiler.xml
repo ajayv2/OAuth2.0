@@ -10,11 +10,13 @@
         <module name="department-service" />
         <module name="api-gateway" />
         <module name="organization-service" />
-        <module name="Spring-Boot-FrontEnd" />
         <module name="service-registry" />
         <module name="employee-service" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Spring-Boot-FrontEnd" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
